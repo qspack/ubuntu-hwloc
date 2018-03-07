@@ -6,6 +6,6 @@ ARG FROM_IMG_HASH=""
 FROM ${DOCKER_REGISTRY}/${DOCKER_REPO}/${FROM_IMG_NAME}:${FROM_IMG_TAG}${DOCKER_IMG_HASH}
 
 ARG HWLOC_VERSION=1.11.4
-ENV HWLOC_VERSION=${HWLOC_VERSION}
-LABEL qnib.spack.heloc.version=${HWLOC_VERSION}
-RUN /usr/local/src/spack/bin/spack install --no-checksum hwloc@${HWLOC_VERSION}
+ENV SPACK_HWLOC_VERSION=${HWLOC_VERSION}
+LABEL qnib.spack.heloc.version=${SPACK_HWLOC_VERSION}
+RUN /usr/local/src/spack/bin/spack install --no-checksum hwloc@${SPACK_HWLOC_VERSION}
